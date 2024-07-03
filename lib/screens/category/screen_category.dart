@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:money_manager_flutter/screens/category/expense_category_lis.dart';
+import 'package:money_manager_flutter/screens/category/income_category_list.dart';
 
 class ScreenCategory extends StatefulWidget {
   const ScreenCategory({super.key});
@@ -23,11 +25,23 @@ late TabController _tabController;
       children: [
         TabBar(
           controller: _tabController,
-          tabs: [
+          labelColor: Colors.black,
+          unselectedLabelColor:Colors.grey,
+          tabs: const[
           Tab(text: 'INCOME',),
           Tab(text: 'EXPENSE',)
-        ])
-      ],
+        ],
+        ),
+        Expanded(
+          child: TabBarView(
+            controller: _tabController,
+            children:const[
+                IncomeCategoryList(),
+                ExpenseCategoryList(),
+            ],
+            ),
+        ),
+      ]
     );
   }
 }
