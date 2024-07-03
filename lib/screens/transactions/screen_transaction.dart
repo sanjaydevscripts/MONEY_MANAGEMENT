@@ -6,11 +6,15 @@ class ScreenTransacton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      padding:const EdgeInsets.all(10) ,
                     itemBuilder: (ctx, index){
-                      return Card(
+                      return const Card(
                         child: ListTile(
-                          leading: Text('02 july'),
-                          title: Text('xxxxx'),
+                          leading: CircleAvatar(
+                                        radius:50, 
+                                        child:Text('02\njuly',textAlign: TextAlign.center,)
+                                       ),
+                          title: Text('RS xxxxx'),
                           subtitle: Text('Travel'),
                         ),
                       );

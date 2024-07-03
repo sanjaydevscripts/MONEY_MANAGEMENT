@@ -17,6 +17,7 @@ class ScreenHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return  SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.grey[200],
         appBar: AppBar(title: Text('MONEY MANAGER'),centerTitle: true,backgroundColor: Colors.blue,),
         bottomNavigationBar: MoneyManagerBottomNavigation(),
         body: SafeArea(
