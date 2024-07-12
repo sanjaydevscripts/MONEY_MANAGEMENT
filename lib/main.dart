@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:money_manager_flutter/models/category/category_mode.dart';
 import 'package:money_manager_flutter/screens/home/screen_home.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+
+  if (!Hive.isAdapterRegistered(CategoryTypeAdapter().typeId)) {
+    Hive.registerAdapter(CategoryTypeAdapter());
+  }
+
+  if (!Hive.isAdapterRegistered(CategoryModelAdapter().typeId)) {
+    Hive.registerAdapter(CategoryModelAdapter());
+  }
   runApp(const MyApp());
 }
 

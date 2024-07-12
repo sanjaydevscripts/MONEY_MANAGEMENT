@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_manager_flutter/db/category/category_db.dart';
 import 'package:money_manager_flutter/screens/category/expense_category_lis.dart';
 import 'package:money_manager_flutter/screens/category/income_category_list.dart';
 
@@ -16,6 +17,10 @@ late TabController _tabController;
   @override
   void initState() {
    _tabController = TabController(length: 2, vsync:this);
+   CategoryDB().getCategories().then((value){
+      print('categories get');
+      print(value.toString());
+   });
     super.initState();
   }
 
