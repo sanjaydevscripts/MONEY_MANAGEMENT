@@ -17,8 +17,8 @@ class IncomeCategoryList extends StatelessWidget {
                   child: ListTile(
                     title: Text(category.name),
                     trailing:
-                        IconButton(onPressed: () {
-                          CategoryDB.instance.deleteCategory(category.id);
+                        IconButton(onPressed: ()async {
+                          await CategoryDB.instance.deleteCategory(category.id);
                         }, icon:const Icon(Icons.delete)),
                   ),
                 );
