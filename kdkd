@@ -1,0 +1,53 @@
+[33mcommit d0ab41f7fb0c4a3421b190d2d8264759d17295ab[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mhost/master[m[33m)[m
+Author: sanjay <sanjayp9072@gmail.com>
+Date:   Wed Sep 18 11:45:45 2024 +0530
+
+    add transaction page created
+
+[33mcommit 8cf77b922599953da815765279db7016366b9933[m
+Author: sanjay <sanjayp9072@gmail.com>
+Date:   Sat Jul 20 13:47:14 2024 +0530
+
+    category updated
+
+[33mcommit ca9025a9a653d46b290363ef6e71d5cb46eac77c[m
+Author: sanjay <sanjayp9072@gmail.com>
+Date:   Fri Jul 19 22:29:36 2024 +0530
+
+    category completed with add ,get category,and delete function
+
+[33mcommit fde505c53cf42cb5b00c47e188118f10a2775d9d[m[33m ([m[1;31mhost/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: sanjay <sanjayp9072@gmail.com>
+Date:   Fri Jul 12 22:22:49 2024 +0530
+
+    pop and radio button created
+
+[33mcommit b63b9fe3ace2642bc3d1dca809443384594ec333[m
+Author: sanjay <sanjayp9072@gmail.com>
+Date:   Wed Jul 3 21:30:58 2024 +0530
+
+    baic UI completed
+
+[33mcommit 5b6a34205620bc156594b8cc2acec54c2657d22f[m
+Author: sanjay <sanjayp9072@gmail.com>
+Date:   Wed Jul 3 21:29:57 2024 +0530
+
+    category list implemented
+
+[33mcommit 75de99ff7d5ba750bc36d9e724e1566e656efc4c[m
+Author: sanjay <sanjayp9072@gmail.com>
+Date:   Wed Jul 3 20:27:40 2024 +0530
+
+    tab added
+
+[33mcommit 54f45aa561753ef17743cdca62e52302008eb237[m
+Author: sanjay <sanjayp9072@gmail.com>
+Date:   Wed Jul 3 16:35:00 2024 +0530
+
+    created readme.md file
+
+[33mcommit 83f29880978df55cb135ca0da7b4d1e5861b0f98[m
+Author: sanjay <sanjayp9072@gmail.com>
+Date:   Wed Jul 3 16:30:00 2024 +0530
+
+    initial commit

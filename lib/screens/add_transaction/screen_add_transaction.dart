@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:money_manager_flutter/db/category/category_db.dart';
+import 'package:money_manager_flutter/db/transactions/transaction_db.dart';
 import 'package:money_manager_flutter/models/category/category_mode.dart';
+import 'package:money_manager_flutter/models/transaction/transaction_model.dart';
 
 class ScreenaddTransaction extends StatefulWidget {
   static const routeName = 'add-transaction';
@@ -16,6 +18,9 @@ class _ScreenaddTransactionState extends State<ScreenaddTransaction> {
   CategoryModel? _selectedCategoryModel;
 
   String ? _categoryID; //first it become null
+
+  final _purposeTextEditingController = TextEditingController();
+  final _amountTextEditingController = TextEditingController();
 
   @override
   void initState() {
@@ -46,11 +51,13 @@ CategoryType
         children: [
           //Purspose
           TextFormField(
+            controller: _purposeTextEditingController,
             keyboardType: TextInputType.text,
             decoration: const InputDecoration(hintText: 'Purpose'),
           ),
           //Amount
           TextFormField(
+            controller: _amountTextEditingController,
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(hintText: 'Amount'),
           ),
@@ -150,6 +157,9 @@ CategoryType
                       return DropdownMenuItem(
                         value: e.id,
                         child: Text(e.name),
+                        onTap: (){
+                          _selectedCategoryModel = e ;
+                        },
                       );
                     }).toList(),
                     onChanged: (selectedValue) {
@@ -169,5 +179,43 @@ CategoryType
         ],
       ),
     )));
+  }
+
+  Future<void>addTransaction() async {
+      final _purposeText = _purposeTextEditingController.text;
+      final _amountText = _amountTextEditingController.text;
+      if(_purposeText.isEmpty){
+        return;
+      }
+      if(_amountText.isEmpty){
+        return;
+      }
+
+      if(_categoryID == null){
+        return;
+      }
+      if(_selectedDate == null){
+        return;
+      }
+      final _parsedamount = double.tryParse(_amountText); //tryparse number anel mathram true
+      if(_parsedamount == null){
+        return;
+      }
+
+      if(_selectedCategoryModel == null){
+        return;
+      }
+      //_selectedDate
+      //_selectedCategorytype
+      //_categoryID
+      final _model = TransactionModel(
+        purpose: _purposeText,
+        amount: _parsedamount,
+        date: _selectedDate!, //null vrillann urapullond ! kodukam
+        type:_selectedCategorytype!,
+        category: _selectedCategoryModel!,
+      );
+
+      TransactionDB.instance.addTransaction(_model);
   }
 }
