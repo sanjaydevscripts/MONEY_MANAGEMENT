@@ -173,7 +173,9 @@ CategoryType
               ),
           //submit
           ElevatedButton(
-            onPressed: (){}, 
+            onPressed: (){
+               addTransaction();
+            }, 
             child: Text('Submit',)
             ),
         ],
@@ -211,11 +213,12 @@ CategoryType
       final _model = TransactionModel(
         purpose: _purposeText,
         amount: _parsedamount,
-        date: _selectedDate!, //null vrillann urapullond ! kodukam
+        date: _selectedDate!, //null verillann urapullond ! kodukam
         type:_selectedCategorytype!,
         category: _selectedCategoryModel!,
       );
 
-      TransactionDB.instance.addTransaction(_model);
+      await TransactionDB.instance.addTransaction(_model);
+      Navigator.of(context).pop();
   }
 }
