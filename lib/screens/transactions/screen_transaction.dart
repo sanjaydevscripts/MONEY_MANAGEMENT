@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:money_manager_flutter/db/transactions/transaction_db.dart';
 import 'package:money_manager_flutter/models/category/category_mode.dart';
 import 'package:money_manager_flutter/models/transaction/transaction_model.dart';
@@ -41,6 +42,10 @@ class ScreenTransacton extends StatelessWidget {
   }
 
   String parseDate(DateTime date){
-    return '${date.day}\n${date.month}';
+
+    final _date = DateFormat.MMMd().format(date);
+    final _splitedDate = _date.split(' ');
+    return '${_splitedDate.last}\n${_splitedDate.first}';
+    //return '${date.day}\n${date.month}';
   }
 }
